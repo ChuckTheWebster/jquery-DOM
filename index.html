@@ -74,7 +74,28 @@
 </div>
 <script src="https://unpkg.com/jquery"></script>
 <script>
-  // Add your code here!
+  $('img').addClass('image-center');
+  $('p').last().remove();
+  $('#title').css("font-size", 14);
+  $('ol')
+    .append('li')
+    .text("tacos and burritos!");
+
+  $("aside")
+    .empty()
+    .add("p")
+    .text("I am so sorry for this stupid list!");
+
+  function changeBackground(val){
+    $("body").css("background-color", val)
+  }
+
+  $("input")
+    .val
+    .on("change", changeBackground($('input').val))
+
+
+
 </script>
 </body>
 

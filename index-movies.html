@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies App</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap@5/dist/css/bootstrap.css">
+  <style>
+
+    form {
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <form>
+    <input type="text" id="title" placeholder="Title">
+    <input type="range" id="rating" min="1" max="5">
+    <button type="submit" id="submit">Submit</button>
+  </form>
+  <div id="movies-list">
+
+  </div>
+
+
+
+</div>
+<script src="https://unpkg.com/jquery"></script>
+<script>
+
+  $('submit').on('click', function() {
+    const $movie = $('#title').val();
+    const $rating = $('#rating').val();
+    const $buttonToRemove = $('<button id="button-to-remove>X</button>');
+    $('movies-list')
+    .append('<div><p>`${movie}: ${rating}`</p></div>')
+    .append($buttonToRemove);
+
+
+</script>
+</body>
+
+</html>

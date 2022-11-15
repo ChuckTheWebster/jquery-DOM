@@ -86,14 +86,35 @@
     .add("p")
     .text("I am so sorry for this stupid list!");
 
+
+
+    $("input")
+    .on("change", function() {
+      const red = $('input').eq(0).val();
+      const blue = $('input').eq(1).val();
+      const green = $('input').eq(2).val();
+      $('body').css('background-color',
+      `rgb(
+      ${red},
+      ${blue},
+      ${green})`)
+    });
+
+    $('img').on('click', function (evt){
+      $(evt.target).remove();
+    });
+
+
+
+
+
+/*
   function changeBackground(val){
     $("body").css("background-color", val)
   }
 
-  $("input")
-    .val
-    .on("change", changeBackground($('input').val))
-
+  $changeBackground($('input').val))
+*/
 
 
 </script>

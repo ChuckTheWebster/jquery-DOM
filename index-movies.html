@@ -32,15 +32,19 @@
 <script src="https://unpkg.com/jquery"></script>
 <script>
 
-  $('submit').on('click', function() {
+  $('button').on('click', function(evt) {
+    evt.preventDefault();
     const $movie = $('#title').val();
     const $rating = $('#rating').val();
-    const $buttonToRemove = $('<button id="button-to-remove>X</button>');
-    $('movies-list')
-    .append('<div><p>`${movie}: ${rating}`</p></div>')
-    .append($buttonToRemove);
-
-
+    const $divContent = $(`<div><span>${$movie}: ${$rating}</span></div>`);
+    const $button = $("<button>x</button>")
+    $('#movies-list')
+    .append($divContent);
+    $divContent.append($button);
+    $button.on('click', function(event){
+      $(event.target).parent().remove()
+    })
+  })
 </script>
 </body>
 
